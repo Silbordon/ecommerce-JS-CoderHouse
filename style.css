@@ -1,0 +1,70 @@
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-hover {
+  padding: 0 20px;
+  transition: 0.3s ease;
+}
+
+.nav-hover:hover {
+  color: #9b59b6;
+  font-weight: 600;
+}
+
+.icon-carrito {
+  width: 50px;
+  cursor: pointer;
+}
+ /* Carrusel */
+
+/* card Product */
+.card {
+  cursor: pointer;
+  height: 450px;
+  width: 350px;
+  border: 1px solid #F8F9F9;
+  margin: 0 1rem 2rem 0
+}
+
+.card img {
+  transition: 0.3s all;
+}
+
+.card:hover img {
+  opacity: 0.7;
+}
+
+.img-fluid {
+  width: 100%;
+  height: 80%;
+}
+.btn-buy{
+  background-color: #9b59b6;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.3s all;
+  padding: 8px 15px;
+  border-radius: 3px
+}
+
+.card:hover .btn-buy {
+  transform: translateY(0);
+  opacity: 1;
+  color: #E5E7E9  
+}
+
+.card-text{
+    font-size: 1.1rem;
+    color:#5D6D7E
+}
+
+.card:hover .card-text{
+    font-weight: 600
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fabicon -->
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <!-- google fonts poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100;1,300;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>E-Shopthes</title>
+  </head>
+  <body>
+    <!--start navbar  -->
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid d-flex mx-4">
+        <a class="navbar-brand fs-4 fw-semibold" href="#">
+          <img
+            src="img/icon/e.png"
+            style="width: 50px; margin-right: -6px"
+            alt=""
+          />
+          - Shopthes
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center container"
+          >
+            <li class="nav-item">
+              <a class="nav-hover nav-link" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-hover nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-hover nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Shop
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">All</a></li>
+                <li><a class="dropdown-item" href="#">Woman</a></li>
+                <li><a class="dropdown-item" href="#">Man</a></li>
+                <li><a class="dropdown-item" href="#">Children</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Accesories</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <img
+          src="/img/icon/carrito1.png"
+          class="icon-carrito"
+          alt="icono carrito de compras"
+        />
+      </div>
+    </nav>
+    <!-- ##### end navbar ##### -->
+    <!-- ##### start banner carrusel ##### -->
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="false"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/img/bg-img/slide-01.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
+            <h5>New Arraivals</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="/img/bg-img/slide-02.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
+            <h5>New Arraivals</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="/img/bg-img/carousel-1.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
+            <h5>New Arraivals</h5>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+     <!-- ##### end banner carrusel ##### -->
+    <!-- start card product -->
+    <section class="row mx-auto container-fluid">
+      <div class="card text-center col-lg-3 col-md-4 col-12">
+        <img src="/img/bg-img/bg-3.jpg" class="img-fluid mb-3" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">Shoes Blue Winter</h5>
+          <h4 class="card-text">$4500</h4>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="card text-center col-lg-3 col-md-4 col-12">
+        <img src="/img/bg-img/bg-4.jpg" class="img-fluid mb-3" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">Shoes Blue Winter</h5>
+          <h4 class="card-text">$4500</h4>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+      <div class="card text-center col-lg-3 col-md-4 col-12">
+        <img src="/img/bg-img/rp2.jpg" class="img-fluid mb-3" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">Shoes Blue Winter</h5>
+          <h4 class="card-text">$4500</h4>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+      <div class="card text-center col-lg-3 col-md-4 col-12">
+        <img src="/img/bg-img/bg-4.jpg" class="img-fluid mb-3" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">Shoes Blue Winter</h5>
+          <h4 class="card-text">$4500</h4>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="./app.js"></script>
+  </body>
+</html>
