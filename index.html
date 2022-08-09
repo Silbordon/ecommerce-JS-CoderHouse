@@ -18,14 +18,22 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>E-Shopthes</title>
   </head>
-  <body style="font-family: 'Poppins', sans-serif;">
+  <body>
     <!--start navbar  -->
 
     <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid d-flex">
-        <a class="navbar-brand fs-4 fw-semibold"  href="#">E-Shopthes</a>
+      <div class="container-fluid d-flex mx-4">
+        <a class="navbar-brand fs-4 fw-semibold" href="#">
+          <img
+            src="img/icon/e.png"
+            style="width: 50px; margin-right: -6px"
+            alt=""
+          />
+          - Shopthes
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -42,58 +50,156 @@
             class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center container"
           >
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-hover nav-link" aria-current="page" href="#"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-hover nav-link" href="#">About Us</a>
             </li>
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-hover nav-link dropdown-toggle"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Shop
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">All</a></li>
+                <li><a class="dropdown-item" href="#">Woman</a></li>
+                <li><a class="dropdown-item" href="#">Man</a></li>
+                <li><a class="dropdown-item" href="#">Children</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="#">Accesories</a>
                 </li>
               </ul>
             </li>
           </ul>
         </div>
+        <img
+          src="/img/icon/carrito1.png"
+          class="icon-carrito"
+          alt="icono carrito de compras"
+        />
       </div>
     </nav>
- <!-- ##### end navbar ##### -->
-    <!-- ##### start banner ##### -->
-    <section
-      class=""
-      style="background-image: url(img/bg-img/bg-1.jpg); height: 70vh"
+    <!-- ##### end navbar ##### -->
+    <!-- ##### start banner carrusel ##### -->
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="false"
     >
-      <div class="container h-100">
-        <div class="row h-100 align-items-center">
-          <div class="col-12">
-            <div class="">
-              <h2 class="fw-bold" style="font-size: 4rem">New Collection</h2>
-              <a href="#" class="btn btn-primary py-3 px-5 mt-3 fs-5"
-                >view collection</a
-              >
-            </div>
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/img/bg-img/slide-01.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
+            <h5>New Arraivals</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="/img/bg-img/slide-02.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
+            <h5>New Arraivals</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="/img/bg-img/carousel-1.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
+            <h5>New Arraivals</h5>
           </div>
         </div>
       </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+     <!-- ##### end banner carrusel ##### -->
+    <!-- start card product -->
+    <section class="row mx-auto container-fluid">
+      <div class="card text-center col-lg-3 col-md-4 col-12">
+        <img src="/img/bg-img/bg-3.jpg" class="img-fluid mb-3" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">Shoes Blue Winter</h5>
+          <h4 class="card-text">$4500</h4>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="card text-center col-lg-3 col-md-4 col-12">
+        <img src="/img/bg-img/bg-4.jpg" class="img-fluid mb-3" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">Shoes Blue Winter</h5>
+          <h4 class="card-text">$4500</h4>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+      <div class="card text-center col-lg-3 col-md-4 col-12">
+        <img src="/img/bg-img/rp2.jpg" class="img-fluid mb-3" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">Shoes Blue Winter</h5>
+          <h4 class="card-text">$4500</h4>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+      <div class="card text-center col-lg-3 col-md-4 col-12">
+        <img src="/img/bg-img/bg-4.jpg" class="img-fluid mb-3" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">Shoes Blue Winter</h5>
+          <h4 class="card-text">$4500</h4>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
     </section>
-     <!-- ##### end banner ##### -->
 
-
-
-     
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
@@ -109,6 +215,6 @@
       integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
       crossorigin="anonymous"
     ></script> -->
-    <!-- <script src="./app.js"></script> -->
+    <script src="./app.js"></script>
   </body>
 </html>
