@@ -68,3 +68,10 @@ body {
 .card:hover .card-text{
     font-weight: 600
 }
+
+.footer{
+  background-color: #9b59b6;
+  width: 100%;
+  height:10vh;
+  margin-top: 8%
+}
