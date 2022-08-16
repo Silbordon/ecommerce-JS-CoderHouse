@@ -1,66 +1,76 @@
-// let seleccion = prompt(
-//   "Buenos dias, desea realizar alguna compra. Responda SI o NO"
-// );
+let seleccion = prompt(
+  "Buenos dias, desea realizar alguna compra. Responda SI para continuar o presione CANCEL para salir"
+);
 
-// while (seleccion.toUpperCase() != "SI" && seleccion.toUpperCase() != "NO") {
-//   alert("Por favor ingrese SI o NO");
-//   seleccion = prompt(
-//     "Buenos dias, desea realizar alguna compra. Recuerde ingresar SI o NO"
-//   );
-// }
+while (seleccion.toUpperCase() != "SI") {
+  alert("Por favor ingrese SI para continuar");
+  seleccion = prompt(
+    "Buenos dias, desea realizar alguna compra. Recuerde ingresar SI o NO"
+  );
+}
 
-// const calculoPorProducto = (cantidad, precio) => {
-//   let valorProducto = cantidad * precio;
-//   alert("Debera abonar " + valorProducto);
-// };
+let totalCarrito = 0;
+let productoElegido;
+let cantidadProductoElegido;
+let carritoLista = [];
 
-// const agregarCarrito = () => {
-//   let productoElegido;
-//   let cantidadProductoElegido;
-//   let precio;
-//   alert(
-//     "A continuacion tendra oportunidad de agregar productos al carrito, cuando termine escriba ESC"
-//   );
-//   productoElegido = prompt(
-//     "Le pedimos ingrese el numero del producto que desea comprar o ESC para salir"
-//   );
-//   if (productoElegido.toUpperCase() !== "ESC") {
-//     cantidadProductoElegido = prompt(
-//       "Le pedimos ingrese la cantidad del producto que desea comprar"
-//     );
-//   } else {
-//     alert("Esperamos vuelva muy pronto");
-//   }
+const calculoPorProducto = (cantidad, precio) => {
+  let valorProducto = cantidad * precio;
+  carritoLista.push(valorProducto)
+  alert("Debera abonar " + valorProducto + " por este producto");
+};
 
-//   switch (productoElegido) {
-//     case productoElegido:
-//       1;
-//       precio = 2500;
-//       calculoPorProducto(cantidadProductoElegido, precio);
-//       break;
-//     case productoElegido:
-//       2;
-//       precio = 3600;
-//       calculoPorProducto(cantidadProductoElegido, precio);
-//       break;
-//     case productoElegido:
-//       3;
-//       precio = 6500;
-//       calculoPorProducto(cantidadProductoElegido, precio);
-//       break;
-//     case productoElegido:
-//       4;
-//       precio = 4999;
-//       calculoPorProducto(cantidadProductoElegido, precio);
-//       break;
-//     default:
-//       break;
-//   }
-// };
+const totalCarritoFunction = (arr) =>{
+  const total = arr.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,0);
+  return total
+}
 
-// if (seleccion.toUpperCase() === "SI") {
-//   agregarCarrito();
-// }
+const agregarCarrito = () => {
+  alert(
+    "A continuacion tendra oportunidad de agregar productos al carrito, cuando termine escriba ESC"
+  );
+  productoElegido = prompt(
+    "A continuacion tendra oportunidad de agregar productos al carrito, cuando termine escriba ESC, \n 1- jeans $4000 \n 2- sweeter $3600 \n 3- Camisa $1500 \n 4-Cinto $1100"
+  );
+    
+  if (productoElegido.toUpperCase() !== "ESC") {
+    cantidadProductoElegido = parseInt(prompt(
+      "Le pedimos ingrese la cantidad del producto que desea comprar"
+    ));
+    chooseProduct(productoElegido,cantidadProductoElegido)
+  }
+  if(productoElegido == "ESC" || productoElegido == "esc"){
+    totalCarrito = totalCarritoFunction(carritoLista)
+    console.log(totalCarrito)
+    if(totalCarrito>0){
+      alert("El total de su compra es " + totalCarrito)
+    }
+  } 
+}
+ 
+const chooseProduct = (productoElegido, cantidadProductoElegido) =>{
+  switch (productoElegido) {
+    case "1":
+      precio = 4000;
+      return valueProd = calculoPorProducto(cantidadProductoElegido, precio); 
+    case "2":
+      precio = 3600;
+      return valueProd =calculoPorProducto(cantidadProductoElegido, precio); 
+    case "3":
+      precio = 1500;
+      return valueProd =calculoPorProducto(cantidadProductoElegido, precio);
+    case "4":
+      precio = 1100;
+      return valueProd =calculoPorProducto(cantidadProductoElegido, precio); 
+    default:
+      break;
+  }
+};
+ 
+  do {
+    agregarCarrito()
+  } while (productoElegido.toUpperCase() != "ESC" && seleccion.toUpperCase() == "SI");
 
 
 //desafio arrays y objetos
@@ -115,7 +125,6 @@ const products = [
   }
 ]
 
-
 //choosing category according to user choice
 let chooseCategoriesProduct = (products, categorie) =>{
  const newChoose = products.filter(prod =>prod.categorie === categorie)
@@ -137,7 +146,7 @@ let addProduct = (productsChoose , newProduct ) =>{
  return productsChoose
 }
 
-//add product en shopping cart
+// add product en shopping cart
 addProduct(shoppingCart, {
   categorie : "woman",
   product : "jeans",
