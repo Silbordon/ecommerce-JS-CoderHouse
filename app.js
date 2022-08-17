@@ -1,3 +1,4 @@
+
 let seleccion = prompt(
   "Buenos dias, desea realizar alguna compra. Responda SI para continuar o presione CANCEL para salir"
 );
@@ -5,7 +6,7 @@ let seleccion = prompt(
 while (seleccion.toUpperCase() != "SI") {
   alert("Por favor ingrese SI para continuar");
   seleccion = prompt(
-    "Buenos dias, desea realizar alguna compra. Recuerde ingresar SI o NO"
+    "Buenos dias, desea realizar alguna compra. Recuerde ingresar SI para continuar"
   );
 }
 
@@ -72,56 +73,79 @@ const chooseProduct = (productoElegido, cantidadProductoElegido) =>{
     agregarCarrito()
   } while (productoElegido.toUpperCase() != "ESC" && seleccion.toUpperCase() == "SI");
 
-
 //desafio arrays y objetos
 const products = [
   {
+    id:1,
     categorie : "woman",
-    product : "jeans",
+    product : "Sweeter",
     color : "blue",
-    price: 4500,
+    price: 3500,
     stock : 20,
-    url: ""
+    url: './img/bg-img/bg-2.jpg'
   },
   {
-    categorie : "man",
-    product : "jeans",
+    id:2,
+    categorie : "woman",
+    product : "Shoes",
     color : "blue",
     price: 6500,
     stock : 5,
-    url: ""
+    url: './img/bg-img/bg-3.jpg'
   },
   {
+    id:3,
     categorie : "woman",
-    product : "jeans",
-    color : "dark",
-    price: 7500,
+    product : "Accesories",
+    color : "brown",
+    price: 2500,
     stock : 17,
-    url: ""
+    url: './img/bg-img/bg-4.jpg'
   },
   {
-    categorie : "children",
-    product : "jeans",
+    id:4,
+    categorie : "woman",
+    product : "Shoes",
     color : "yellow",
     price: 3400,
     stock : 8,
-    url: ""
+    url: './img/bg-img/blog4.jpg'
   },
   {
+    id:5,
     categorie : "woman",
-    product : "jeans",
-    color : "gray",
+    product : "Accesories",
+    color : "red",
     price: 3500,
     stock : 9,
-    url: ""
+    url: './img/bg-img/blog3.jpg'
   },
   {
+    id:6,
     categorie : "woman",
-    product : "jeans",
-    color : "blue",
-    price: 6500,
+    product : "Dress shorter",
+    color : "multicolor",
+    price: 2500,
     stock : 4,
-    url: ""
+    url:'./img/bg-img/blog6.jpg'
+  },
+  {
+    id:7,
+    categorie : "woman",
+    product : "Dress shorter",
+    color : "multicolor",
+    price: 2500,
+    stock : 4,
+    url:'./img/bg-img/blog6.jpg'
+  },
+  {
+    id:8,
+    categorie : "woman",
+    product : "Dress shorter",
+    color : "multicolor",
+    price: 2500,
+    stock : 4,
+    url:'./img/bg-img/blog6.jpg'
   }
 ]
 
@@ -156,3 +180,22 @@ addProduct(shoppingCart, {
   url: ""
 })
 console.log(shoppingCart)
+
+
+//interaccion DOM mostrando todos los productos
+const  containerProducts = document.getElementById('container-products')
+let box;
+
+for (const prod of products) {
+  box = `
+  <div class="card text-center col-lg-3 col-md-4 col-12">
+  <img src=${prod.url} class="img-fluid mb-3 mt-3" alt=${prod.product} />
+  <div class="card-body">
+    <h5 class="card-title">${prod.product}</h5>
+    <h4 class="card-text">${prod.price}$</h4>
+    <button class="btn-buy">Buy Now</button>
+  </div>
+</div>
+  `
+  containerProducts.innerHTML += box
+}

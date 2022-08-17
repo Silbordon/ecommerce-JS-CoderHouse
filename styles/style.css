@@ -22,15 +22,23 @@ body {
   width: 50px;
   cursor: pointer;
 }
- /* Carrusel */
+/* Carrusel */
 
 /* card Product */
+.container-products {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  padding: 3% 5%;
+}
 .card {
   cursor: pointer;
-  height: 450px;
+  height: 420px;
   width: 350px;
-  border: 1px solid #F8F9F9;
-  margin: 0 1rem 2rem 0
+  border: 1px solid #f8f5f9;
+  margin: 0 0 2rem 0;
+  background: rgb(82,31,102);
+  background: linear-gradient(180deg, rgba(82,31,102,0.4738270308123249) 5%, rgba(210,193,228,0.7931547619047619) 27%, rgba(246,246,247,1) 76%);
 }
 
 .card img {
@@ -44,34 +52,35 @@ body {
 .img-fluid {
   width: 100%;
   height: 80%;
+  border-radius: 5px;
 }
-.btn-buy{
+.btn-buy {
   background-color: #9b59b6;
   transform: translateY(20px);
   opacity: 0;
   transition: 0.3s all;
   padding: 8px 15px;
-  border-radius: 3px
+  border-radius: 3px;
 }
 
 .card:hover .btn-buy {
   transform: translateY(0);
   opacity: 1;
-  color: #E5E7E9  
+  color: #e5e7e9;
 }
 
-.card-text{
-    font-size: 1.1rem;
-    color:#5D6D7E
+.card-text {
+  font-size: 1.1rem;
+  color: #5d6d7e;
 }
 
-.card:hover .card-text{
-    font-weight: 600
+.card:hover .card-text {
+  font-weight: 600;
 }
 
-.footer{
+.footer {
   background-color: #9b59b6;
   width: 100%;
-  height:10vh;
-  margin-top: 8%
+  height: 10vh;
+  margin-top: 8%;
 }
