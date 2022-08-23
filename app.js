@@ -177,66 +177,17 @@ const chooseCategoriesProduct = (category) => {
 let productId = []
 const chooseProductDetails = (id) =>{
 productId = products.filter(prod => prod.id == id)
-return productId
+renderModal(productId)
 }
 
 
-// const renderModal = (arr) =>{
-// let box = ''
-// arr.map(prod => box.innerHTML = `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-// <div class="modal-dialog">
-//   <div class="modal-content">
-//     <div class="modal-header">
-//       <h3 class="title-modal" id="exampleModalLabel">${prod.product} </h3>
-//       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-//     </div>
-
-//     <div class="modal-body">  
-//      <div class="container-modal">
-//         <img src="./img/bg-img/bg-4.jpg" class="img-modal" alt="">
-//         <div class="container-textModal">
-//           <p class="price-modal">$${prod.price}</p>
-//           <p class="description-modal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate a at consequatur sapiente molestiae aperiam vel, rem ratione accusamus incidunt temporibus asperiores ab nulla eveniet. Inventore laudantium maiores deleniti eius!</p>
-//           <div class="container-counter">
-//           <Button class="btn-counter">+</Button>
-//           <span class="counter">1</span>
-//           <Button class="btn-counter">-</Button>
-//         </div>
-//       </div>
-//     </div>
-
-//     <div class="modal-footer">
-//       <button type="button" class="btn-buy">Add to cart</button>
-//     </div>
-//   </div>
-// </div>
-// </div>
-// </div>
-// </div>` )
-// }
-
-
-
-const renderProduct = (arr) => {
-  containerProducts.innerHTML = "";
-
-  for (const prod of arr) {
-    box = `
-    <div class="card text-center col-lg-3 col-md-4 col-12">
-    <img src=${prod.url} class="img-fluid mb-3 mt-3" alt=${prod.product} />
-    <div class="card-body">
-      <h5 class="card-title">${prod.product}</h5>
-      <h4 class="card-text">${prod.price}$</h4>
-      <button onclick="chooseProductDetails(${prod.id})" type="button" class="btn-buy" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Buy Now
-      </button>
-    
-
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+const renderModal = (arr) =>{
+let box = ''
+arr.map(prod => box.innerHTML = `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
-      <h3 class="title-modal" id="exampleModalLabel"> </h3>
+      <h3 class="title-modal" id="exampleModalLabel">${prod.product} </h3>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
 
@@ -244,7 +195,7 @@ const renderProduct = (arr) => {
      <div class="container-modal">
         <img src="./img/bg-img/bg-4.jpg" class="img-modal" alt="">
         <div class="container-textModal">
-          <p class="price-modal">$</p>
+          <p class="price-modal">$${prod.price}</p>
           <p class="description-modal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate a at consequatur sapiente molestiae aperiam vel, rem ratione accusamus incidunt temporibus asperiores ab nulla eveniet. Inventore laudantium maiores deleniti eius!</p>
           <div class="container-counter">
           <Button class="btn-counter">+</Button>
@@ -261,7 +212,24 @@ const renderProduct = (arr) => {
 </div>
 </div>
 </div>
-</div> 
+</div>` )
+}
+
+
+
+const renderProduct = (arr) => {
+  containerProducts.innerHTML = "";
+
+  for (const prod of arr) {
+    box = `
+    <div class="card text-center col-lg-3 col-md-4 col-12">
+    <img src=${prod.url} class="img-fluid mb-3 mt-3" alt=${prod.product} />
+    <div class="card-body">
+      <h5 class="card-title">${prod.product}</h5>
+      <h4 class="card-text">${prod.price}$</h4>
+      <button onclick="chooseProductDetails(${prod.id})" type="button" class="btn-buy" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Buy Now
+      </button>
     `;
     containerProducts.innerHTML += box;
   }
