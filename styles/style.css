@@ -8,6 +8,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.none {
+  display: none;
+}
+
 .nav-hover {
   padding: 0 20px;
   transition: 0.3s ease;
@@ -29,7 +33,7 @@ body {
   display: flex;
   width: 90%;
   justify-content: space-between;
-  padding: 3% 5%;
+  padding: 5% 10%;
 }
 .card {
   cursor: pointer;
@@ -37,8 +41,13 @@ body {
   width: 350px;
   border: 1px solid #f8f5f9;
   margin: 0 0 2rem 0;
-  background: rgb(82,31,102);
-  background: linear-gradient(180deg, rgba(82,31,102,0.4738270308123249) 5%, rgba(210,193,228,0.7931547619047619) 27%, rgba(246,246,247,1) 76%);
+  background: rgb(82, 31, 102);
+  background: linear-gradient(
+    180deg,
+    rgba(82, 31, 102, 0.4738270308123249) 5%,
+    rgba(210, 193, 228, 0.7931547619047619) 27%,
+    rgba(246, 246, 247, 1) 76%
+  );
 }
 
 .card img {
@@ -54,6 +63,7 @@ body {
   height: 80%;
   border-radius: 5px;
 }
+
 .btn-buy {
   background-color: #9b59b6;
   transform: translateY(20px);
@@ -78,9 +88,68 @@ body {
   font-weight: 600;
 }
 
+//modal
+.modal-footer:hover .btn-buy {
+  color: black;
+}
+
+.container-modal {
+  display: flex;
+  margin-bottom: 30px
+}
+
+.img-modal {
+  width: 50%;
+}
+
+.container-textModal {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 6%;
+  width: 50%;
+}
+
+.title-modal {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.price-modal {
+  margin-top: -7px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.description-modal {
+  font-size: 13px;
+  font-style: italic;
+}
+
+.container-counter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px #e7e0ef solid;
+  border-radius: 5px;
+}
+
+.btn-counter {
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 4px 10px;
+}
+
+.counter {
+  font-size: 15px;
+  padding: 4px 10px;
+}
+
+//FOOTER
 .footer {
   background-color: #9b59b6;
   width: 100%;
   height: 10vh;
-  margin-top: 8%;
+  margin-top: 5%;
+  bottom: 0;
 }

@@ -23,7 +23,6 @@
   </head>
   <body>
     <!--start navbar  -->
-
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid d-flex mx-4">
         <a class="navbar-brand fs-4 fw-semibold" href="#">
@@ -70,101 +69,133 @@
               >
                 Shop
               </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">All</a></li>
-                <li><a class="dropdown-item" href="#">Woman</a></li>
-                <li><a class="dropdown-item" href="#">Man</a></li>
-                <li><a class="dropdown-item" href="#">Children</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Accesories</a>
-                </li>
-              </ul>
+              <div class="dropdown-menu">
+                <span
+                  onclick="chooseCategoriesProduct('')"
+                  class="dropdown-item"
+                  >All
+                </span>
+                <span
+                  onclick="chooseCategoriesProduct('woman')"
+                  class="dropdown-item"
+                  >Woman
+                </span>
+                <span
+                  onclick="chooseCategoriesProduct('man')"
+                  class="dropdown-item"
+                  >Man
+                </span>
+                <span
+                  onclick="chooseCategoriesProduct('children')"
+                  class="dropdown-item"
+                  >Children
+                </span>
+                <div><hr class="dropdown-divider" /></div>
+                <span
+                  onclick="chooseCategoriesProduct('accesories')"
+                  class="dropdown-item"
+                  >Accesories
+                </span>
+              </div>
             </li>
           </ul>
         </div>
-        <img
-          src="/img/icon/carrito1.png"
-          class="icon-carrito"
-          alt="icono carrito de compras"
-        />
+        <a href="./cart.html">
+          <img
+            src="/img/icon/carrito1.png"
+            class="icon-carrito"
+            alt="icono carrito de compras"
+          />
+        </a>
       </div>
     </nav>
     <!-- ##### end navbar ##### -->
+
     <!-- ##### start banner carrusel ##### -->
-    <div
-      id="carouselExampleCaptions"
-      class="carousel slide"
-      data-bs-ride="false"
-    >
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="/img/bg-img/slide-01.jpg" class="d-block w-100" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
-            <h5>New Arraivals</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="/img/bg-img/slide-02.jpg" class="d-block w-100" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
-            <h5>New Arraivals</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img
-            src="/img/bg-img/carousel-1.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
-            <h5>New Arraivals</h5>
-          </div>
-        </div>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev"
+    <section id="container-banner">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="false"
       >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="/img/bg-img/slide-01.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
+              <h5>New Arraivals</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/img/bg-img/slide-02.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
+              <h5>New Arraivals</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/img/bg-img/carousel-1.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="fw-bold" style="font-size: 5rem">New Collection</h2>
+              <h5>New Arraivals</h5>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
     <!-- ##### end banner carrusel ##### -->
     <!-- start card product -->
     <section
