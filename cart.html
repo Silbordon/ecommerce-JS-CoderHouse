@@ -70,27 +70,48 @@
               >
                 Shop
               </a>
-              <ul class="dropdown-menu">
-                <li><a id="all" class="dropdown-item" onclick="chooseCategoriesProduct('')" href="./shop.html">All</a></li>
-                <li><a id="woman" class="dropdown-item" onclick="chooseCategoriesProduct('woman')" href="./shop.html">Woman</a></li>
-                <li><a id="man" class="dropdown-item" onclick="chooseCategoriesProduct('man')" href="./shop.html">Man</a></li>
-                <li><a id="children" class="dropdown-item" onclick="chooseCategoriesProduct('children')" href="./shop.html">Children</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a id="accesories" class="dropdown-item" onclick="chooseCategoriesProduct('accesories')" href="./shop.html">Accesories</a>
-                </li>
-              </ul>
+              <div class="dropdown-menu">
+                <span
+                  onclick="chooseCategoriesProduct('')"
+                  class="dropdown-item"
+                  >All
+                </span>
+                <span
+                  onclick="chooseCategoriesProduct('woman')"
+                  class="dropdown-item"
+                  >Woman
+                </span>
+                <span
+                  onclick="chooseCategoriesProduct('man')"
+                  class="dropdown-item"
+                  >Man
+                </span>
+                <span
+                  onclick="chooseCategoriesProduct('children')"
+                  class="dropdown-item"
+                  >Children
+                </span>
+                <div><hr class="dropdown-divider" /></div>
+                <span
+                  onclick="chooseCategoriesProduct('accesories')"
+                  class="dropdown-item"
+                  >Accesories
+                </span>
+              </div>
             </li>
           </ul>
         </div>
-        <img
-          src="/img/icon/carrito1.png"
-          class="icon-carrito"
-          alt="icono carrito de compras"
-        />
+        <a href="./cart.html">
+          <img
+            src="/img/icon/carrito1.png"
+            class="icon-carrito"
+            alt="icono carrito de compras"
+          />
+        </a>
       </div>
     </nav>
     <!-- ##### end navbar ##### -->
+
 
    <h2>CARRITO EN PROGRESO</h2>
     
