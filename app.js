@@ -1,4 +1,3 @@
-
 // let totalCarrito = 0;
 // let productoElegido;
 // let cantidadProductoElegido;
@@ -15,7 +14,6 @@
 //     (previousValue, currentValue) => previousValue + currentValue,0);
 //   return total
 // }
-
 
 //desafio arrays y objetos
 let products = [
@@ -147,11 +145,40 @@ let products = [
   },
 ];
 
-
 //interaccion DOM mostrando todos los productos
-const containerProducts = document.getElementById("container-products");
-const banner = document.getElementById("container-banner");
+const sectionProducts = document.getElementById("section-products"); //section products
+const containerProducts = document.getElementById("container-products"); //div de products
+const banner = document.getElementById("container-banner"); // banner
+const containerProductDetails = document.getElementById("container-product-details"); // div de details products
 let box = "";
+
+
+//funcion contador
+let counter;
+
+const sumar = () => {
+  counter = parseInt(document.getElementById('number').innerHTML) +1
+  document.getElementById("number").innerHTML = counter
+  return
+};
+
+const restar = () => {
+  if (counter == 0) return; // validamos que el valor no sea menor a 0
+  counter = parseInt(document.getElementById('number').innerHTML) -1
+  document.getElementById("number").innerHTML = counter
+  return
+};
+
+ 
+//funcion volver a home desde details
+const handlerHome = () =>{
+  console.log("hola");
+  banner.classList.remove("none");
+  sectionProducts.classList.remove("none");
+  containerProductDetails.classList.add('none')
+}
+
+
 
 //funcion elegir categoria desde navbar y pintar en el html
 const chooseCategoriesProduct = (category) => {
@@ -159,7 +186,6 @@ const chooseCategoriesProduct = (category) => {
   let productsCopy = [...products];
   let productFilter;
   console.log(category);
-
   if (
     category == "woman" ||
     category == "man" ||
@@ -174,12 +200,58 @@ const chooseCategoriesProduct = (category) => {
 };
 
 //funcion elegir datos de cada card segun el id
-let productId = []
-const chooseProductDetails = (id) =>{
-productId = products.filter(prod => prod.id == id)
-return productId
-}
+let productId = [];
+const chooseProductDetails = (id) => {
+  banner.classList.add("none");
+  sectionProducts.classList.add("none");
+  containerProductDetails.classList.remove('none')
 
+  productId = products.filter((prod) => prod.id == id);
+  console.log(productId);
+  containerProductDetails.innerHTML = `
+  <div class="card container-modal" style="width:700px;">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <img src=${productId[0].url} class="img-fluid img-modal rounded-start" alt="...">
+    </div>
+    <div class="col-md-5 text-modal">
+      <div class="card-body">
+        <h5 class="card-title title-modal">${productId[0].product}</h5>
+        <p class="price-modal">$${productId[0].price}</p>
+        <p class="description-modal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate a at consequatur sapiente molestiae aperiam vel, rem ratione accusamus incidunt temporibus asperiores ab nulla eveniet. Inventore laudantium maiores deleniti eius!</p>
+        <div class="container-counter">
+          <Button onclick="sumar()" class="btn-counter">+</Button>
+          <span id="number" class="counter">1</span>
+          <Button onclick="restar()" class="btn-counter">-</Button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-btn">
+    <button type="button" class="btn-buy">Add to cart</button>
+    <button onclick="handlerHome()" type="button" class="btn-buy">Return Home</button>
+ </div>
+  </div>
+</div>`;
+};
+
+//funcion para pintar en el html todas las cards de procucts
+const renderProduct = (arr) => {
+  containerProducts.innerHTML = "";
+
+  for (const prod of arr) {
+    box = `
+    <div class="card text-center col-lg-3 col-md-4 col-12">
+    <img src=${prod.url} class="img-fluid mb-3 mt-3" alt=${prod.product} />
+    <div class="card-body">
+      <h5 class="card-title">${prod.product}</h5>
+      <h4 class="card-text">${prod.price}$</h4>
+      <button onclick="chooseProductDetails(${prod.id})" type="button" class="btn-buy">
+      Buy Now
+      </button>`;
+    containerProducts.innerHTML += box;
+  }
+};
 
 // const renderModal = (arr) =>{
 // let box = ''
@@ -191,7 +263,7 @@ return productId
 //       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 //     </div>
 
-//     <div class="modal-body">  
+//     <div class="modal-body">
 //      <div class="container-modal">
 //         <img src="./img/bg-img/bg-4.jpg" class="img-modal" alt="">
 //         <div class="container-textModal">
@@ -215,57 +287,53 @@ return productId
 // </div>` )
 // }
 
+// const renderProduct = (arr) => {
 
+//   containerProducts.innerHTML = "";
 
-const renderProduct = (arr) => {
+//   for (const prod of arr) {
+//     box = `
+//     <div class="card text-center col-lg-3 col-md-4 col-12">
+//     <img src=${prod.url} class="img-fluid mb-3 mt-3" alt=${prod.product} />
+//     <div class="card-body">
+//       <h5 class="card-title">${prod.product}</h5>
+//       <h4 class="card-text">${prod.price}$</h4>
+//       <button onclick="chooseProductDetails(${prod.id})" type="button" class="btn-buy" data-bs-toggle="modal" data-bs-target="#exampleModal">
+//       Buy Now
+//       </button>
 
-  containerProducts.innerHTML = "";
+//        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+//       <div class="modal-dialog">
+//         <div class="modal-content">
+//           <div class="modal-header">
+//             <h3 class="title-modal" id="exampleModalLabel">${prod.product} </h3>
+//             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+//           </div>
 
-  for (const prod of arr) {
-    box = `
-    <div class="card text-center col-lg-3 col-md-4 col-12">
-    <img src=${prod.url} class="img-fluid mb-3 mt-3" alt=${prod.product} />
-    <div class="card-body">
-      <h5 class="card-title">${prod.product}</h5>
-      <h4 class="card-text">${prod.price}$</h4>
-      <button onclick="chooseProductDetails(${prod.id})" type="button" class="btn-buy" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Buy Now
-      </button>
+//           <div class="modal-body">
+//            <div class="container-modal">
+//               <img src="./img/bg-img/bg-4.jpg" class="img-modal" alt="">
+//               <div class="container-textModal">
+//                 <p class="price-modal">$${prod.price}</p>
+//                 <p class="description-modal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate a at consequatur sapiente molestiae aperiam vel, rem ratione accusamus incidunt temporibus asperiores ab nulla eveniet. Inventore laudantium maiores deleniti eius!</p>
+//                 <div class="container-counter">
+//                 <Button class="btn-counter">+</Button>
+//                 <span class="counter">1</span>
+//                 <Button class="btn-counter">-</Button>
+//               </div>
+//             </div>
+//           </div>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="title-modal" id="exampleModalLabel">${prod.product} </h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-      
-          <div class="modal-body">  
-           <div class="container-modal">
-              <img src="./img/bg-img/bg-4.jpg" class="img-modal" alt="">
-              <div class="container-textModal">
-                <p class="price-modal">$${prod.price}</p>
-                <p class="description-modal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate a at consequatur sapiente molestiae aperiam vel, rem ratione accusamus incidunt temporibus asperiores ab nulla eveniet. Inventore laudantium maiores deleniti eius!</p>
-                <div class="container-counter">
-                <Button class="btn-counter">+</Button>
-                <span class="counter">1</span>
-                <Button class="btn-counter">-</Button>
-              </div>
-            </div>
-          </div>
-      
-          <div class="modal-footer">
-            <button type="button" class="btn-buy">Add to cart</button>
-          </div>
-        </div>
-      </div>
-      </div>
-      </div>
-      </div>
-    `;
-    containerProducts.innerHTML += box;
-  }
-};
+//           <div class="modal-footer">
+//             <button type="button" class="btn-buy">Add to cart</button>
+//           </div>
+//         </div>
+//       </div>
+//       </div>
+//       </div>
+//       </div>`;
+//     containerProducts.innerHTML += box;
+//   }
+// };
 
 window.addEventListener("onload", renderProduct(products));
-
