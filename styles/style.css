@@ -88,63 +88,6 @@ body {
   font-weight: 600;
 }
 
-//modal
-/* .modal-footer:hover .btn-buy {
-  color: black;
-}
-
-.container-modal {
-  display: flex;
-  margin-bottom: 30px
-}
-
-.img-modal {
-  width: 50%;
-}
-
-.container-textModal {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 0 6%;
-  width: 50%;
-}
-
-.title-modal {
-  font-size: 25px;
-  font-weight: 500;
-}
-
-.price-modal {
-  margin-top: -7px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.description-modal {
-  font-size: 13px;
-  font-style: italic;
-}
-
-.container-counter {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px #e7e0ef solid;
-  border-radius: 5px;
-}
-
-.btn-counter {
-  border-radius: 5px;
-  font-size: 15px;
-  padding: 4px 10px;
-}
-
-.counter {
-  font-size: 15px;
-  padding: 4px 10px;
-} */
-
 //cart product details
 
 .container-product-details {
@@ -157,9 +100,9 @@ body {
 .container-modal {
   margin: auto;
   margin-top: 100px;
-  -webkit-box-shadow: -5px 13px 52px -24px rgba(0,0,0,0.75);
-  -moz-box-shadow: -5px 13px 52px -24px rgba(0,0,0,0.75);
-  box-shadow: -5px 13px 52px -24px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -5px 13px 52px -24px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -5px 13px 52px -24px rgba(0, 0, 0, 0.75);
+  box-shadow: -5px 13px 52px -24px rgba(0, 0, 0, 0.75);
 }
 
 .img-modal {
@@ -217,6 +160,54 @@ body {
   margin: 0px 20px;
 }
 
+//section cart
+#section-cart {
+  width: 100%;
+  height: 100%;
+}
+
+.container-cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 80px 0;
+  padding: 0 40px;
+}
+
+.cart-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:40%;
+  border: 1px black solid;
+  border-radius: 15px;
+  background: rgb(226,226,237);
+  background: linear-gradient(180deg, rgba(226,226,237,0.7763480392156863) 23%, rgba(244,241,247,0.4682247899159664) 83%);
+  padding-bottom: 20px;
+}
+
+.title-cart{
+  font-size: 30px;
+  padding: 10px 0;
+  font-weight: 600;
+  border-bottom: 1px black solid;
+}
+
+.description-cart{
+  font-size: 15px;
+  padding-top: 15px
+}
+
+.total-cart{
+  font-style: italic;
+}
+
+.cart-item > .btn{
+  width: 30%;
+  margin: 7px 0;
+}
 //FOOTER
 .footer {
   background-color: #9b59b6;
