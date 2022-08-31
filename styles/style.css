@@ -197,7 +197,7 @@ body {
 
 .description-cart{
   font-size: 15px;
-  padding-top: 15px
+  padding-top: 15px;
 }
 
 .total-cart{
@@ -208,6 +208,22 @@ body {
   width: 30%;
   margin: 7px 0;
 }
+
+//section cart items li
+.containerLi{
+
+}
+.li{
+  font-size: px;
+  margin: 10px 0;
+  border-bottom: 1px gray solid;
+  padding: 10px 0
+}
+
+.icon{
+width:20px;
+}
+
 //FOOTER
 .footer {
   background-color: #9b59b6;
