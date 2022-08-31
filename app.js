@@ -140,12 +140,12 @@ const totalCart = document.getElementById("total-cart"); // p del total del carr
 const btnEmptyCart = document.getElementById("btn-emptyCart"); // btn vaciar carrito
 const spanCartAmount = document.getElementById("span-cartAmount"); //span de cantidad de item en el carrito
 const containerItemsLi = document.getElementById("container-items-li"); //ul de container de items en carrito
-const deleteIcon = document.getElementById('delete-icon') //icono delete item del carrito
-
+const deleteIcon = document.getElementById("delete-icon"); //icono delete item del carrito
+ 
 let box = "";
 let cartArray = [];
 let counter = 1;
-let data=[]
+let data = [];
 
 //funcion contador
 const sumar = () => {
@@ -175,18 +175,29 @@ const handlerAdd = (price, co, id) => {
   let title = productId[0].product;
   co = parseInt(document.getElementById("number").innerHTML);
   let newProductAdd = {
+    id:id,
     price: price,
     co: co,
     title: title,
   };
   data = JSON.parse(localStorage.getItem("cartArray"));
-  cartArray = [...data, newProductAdd];
-  data = localStorage.setItem("cartArray", JSON.stringify(cartArray));
-  addAmountSpanNavbar();
-  banner.classList.remove("none");
-  sectionProducts.classList.remove("none");
-  containerProductDetails.classList.add("none");
-  sectionCart.classList.add("none");
+  if (data) {
+    cartArray = [...data, newProductAdd];
+    data = localStorage.setItem("cartArray", JSON.stringify(cartArray));
+    addAmountSpanNavbar();
+    banner.classList.remove("none");
+    sectionProducts.classList.remove("none");
+    containerProductDetails.classList.add("none");
+    sectionCart.classList.add("none");
+  }else{
+    cartArray.push(newProductAdd);
+    data = localStorage.setItem("cartArray", JSON.stringify(cartArray));
+    addAmountSpanNavbar();
+    banner.classList.remove("none");
+    sectionProducts.classList.remove("none");
+    containerProductDetails.classList.add("none");
+    sectionCart.classList.add("none");
+  }
 };
 
 //Agregar cantidad de items al span del navbar
@@ -295,15 +306,17 @@ const totalCarritoFunction = () => {
 };
 
 //Funcion delete items del carrito de compra
-// const deleteItems = (id) =>{
-  // console.log(id)
-  // data = JSON.parse(localStorage.getItem("cartArray"));
-  // if(data){
-  //   const newArrayCart = data.filter((prod) => prod.id != id);
-  //   localStorage.setItem('cartArray', JSON.stringify(newArrayCart))
-  // }
-// }
-
+const deleteItems = (id) =>{
+  console.log(id)
+  data = JSON.parse(localStorage.getItem("cartArray"));
+  if(data){
+    const newArrayCart = data.filter((prod) => prod.id != id);
+    localStorage.setItem('cartArray', JSON.stringify(newArrayCart))
+    detailsCart()
+    totalCarritoFunction()
+    addAmountSpanNavbar()
+}
+}
 
 //funcion rellenar detalle de compra
 const detailsCart = () => {
@@ -322,7 +335,7 @@ const detailsCart = () => {
     <div class="li col">
     ${el.price}
     </div>
-    <div class="li col">
+    <div onclick="deleteItems(${el.id})" class="li col">
     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z"/></svg>
     </div>
   </div>
