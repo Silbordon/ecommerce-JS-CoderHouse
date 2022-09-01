@@ -141,7 +141,7 @@ const btnEmptyCart = document.getElementById("btn-emptyCart"); // btn vaciar car
 const spanCartAmount = document.getElementById("span-cartAmount"); //span de cantidad de item en el carrito
 const containerItemsLi = document.getElementById("container-items-li"); //ul de container de items en carrito
 const deleteIcon = document.getElementById("delete-icon"); //icono delete item del carrito
- 
+
 let box = "";
 let cartArray = [];
 let counter = 1;
@@ -171,11 +171,15 @@ const handlerHome = () => {
 
 //funcion agregar productos al array
 const handlerAdd = (price, co, id) => {
+  swal({
+    title: "Great!! We added the product in your cart :)",
+    className: "swal-add"
+  });
   let productId = products.filter((prod) => prod.id == id);
   let title = productId[0].product;
   co = parseInt(document.getElementById("number").innerHTML);
   let newProductAdd = {
-    id:id,
+    id: id,
     price: price,
     co: co,
     title: title,
@@ -189,7 +193,7 @@ const handlerAdd = (price, co, id) => {
     sectionProducts.classList.remove("none");
     containerProductDetails.classList.add("none");
     sectionCart.classList.add("none");
-  }else{
+  } else {
     cartArray.push(newProductAdd);
     data = localStorage.setItem("cartArray", JSON.stringify(cartArray));
     addAmountSpanNavbar();
@@ -218,6 +222,7 @@ const addAmountSpanNavbar = () => {
 //funcion elegir categoria desde navbar y pintar en el html
 const chooseCategoriesProduct = (category) => {
   banner.classList.add("none");
+  sectionCart.classList.add("none");
   let productsCopy = [...products];
   let productFilter;
   console.log(category);
@@ -306,17 +311,17 @@ const totalCarritoFunction = () => {
 };
 
 //Funcion delete items del carrito de compra
-const deleteItems = (id) =>{
-  console.log(id)
+const deleteItems = (id) => {
+  console.log(id);
   data = JSON.parse(localStorage.getItem("cartArray"));
-  if(data){
+  if (data) {
     const newArrayCart = data.filter((prod) => prod.id != id);
-    localStorage.setItem('cartArray', JSON.stringify(newArrayCart))
-    detailsCart()
-    totalCarritoFunction()
-    addAmountSpanNavbar()
-}
-}
+    localStorage.setItem("cartArray", JSON.stringify(newArrayCart));
+    detailsCart();
+    totalCarritoFunction();
+    addAmountSpanNavbar();
+  }
+};
 
 //funcion rellenar detalle de compra
 const detailsCart = () => {
@@ -358,8 +363,23 @@ btnCart.addEventListener("click", () => {
 
 //evento btn vaciar carrito
 btnEmptyCart.addEventListener("click", () => {
-  data = localStorage.removeItem("cartArray");
-  addAmountSpanNavbar();
+  swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to recover your purchase!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  }).then((willDelete) => {
+    if (willDelete) {
+      swal("Your Purchase has been deleted!", {
+        icon: "success",
+      });
+      data = localStorage.removeItem("cartArray");
+      addAmountSpanNavbar();
+    } else {
+      swal("Your Purchase is safe!");
+    }
+  });
   handlerHome();
 });
 {
