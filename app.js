@@ -282,6 +282,7 @@ const chooseProductDetails = (id) => {
 //funcion para pintar en el html todas las cards de procucts
 const renderProduct = (arr) => {
   containerProducts.innerHTML = "";
+  sectionCart.classList.add("none");
   addAmountSpanNavbar();
   for (const prod of arr) {
     box = `
@@ -351,14 +352,25 @@ const detailsCart = () => {
   return items;
 };
 
+
 //evento onclick del carrito de compras
 btnCart.addEventListener("click", () => {
   sectionCart.classList.remove("none");
   banner.classList.add("none");
   sectionProducts.classList.add("none");
   containerProductDetails.classList.add("none");
-  totalCarritoFunction();
-  detailsCart();
+  data = JSON.parse(localStorage.getItem("cartArray"));
+  if(data.length > 0){
+    totalCarritoFunction();
+    detailsCart();
+  }else{
+    sectionCart.innerHTML=""
+    swal({
+      title: "Your cart is EMPTY :(",
+      className: "swal-add"
+    });
+    handlerHome()
+  }
 });
 
 //evento btn vaciar carrito
