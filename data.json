@@ -1,0 +1,21 @@
+
+[
+  {
+    "id": 1,
+    "categorie": "woman",
+    "product": "Sweeter",
+    "color": "blue",
+    "price": 3500,
+    "stock": 20,
+    "url": "./img/bg-img/bg-2.jpg"
+  },
+  {
+    "id": 2,
+    "categorie": "woman",
+    "product": "Shoes",
+    "color": "blue",
+    "price": 6500,
+    "stock": 5,
+    "url": "./img/bg-img/bg-3.jpg"
+  }
+]

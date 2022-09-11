@@ -127,6 +127,29 @@ let products = [
   },
 ];
 
+
+//ejemplo FETCH
+// let prod;
+// const traerProductos = () =>{
+  
+//   fetch('data.json')
+//   .then((res) => res.json())
+//   .then((json) =>{
+//     console.log(json);
+//     prod = json
+//     return prod
+//   })
+//   .catch((e) => console.log(e))
+//   console.log(prod)
+//   return prod
+// }
+
+// let dat = traerProductos()
+// console.log(traerProductos())
+// console.log(dat)
+
+
+
 //interaccion DOM mostrando todos los productos
 const sectionProducts = document.getElementById("section-products"); //section products
 const containerProducts = document.getElementById("container-products"); //div de products
@@ -315,7 +338,17 @@ const totalCarritoFunction = () => {
 const deleteItems = (id) => {
   console.log(id);
   data = JSON.parse(localStorage.getItem("cartArray"));
-  if (data) {
+  if(data.length === 1){
+    const newArrayCart = data.filter((prod) => prod.id != id);
+    localStorage.setItem("cartArray", JSON.stringify(newArrayCart));
+    addAmountSpanNavbar();
+    sectionCart.innerHTML=""
+    swal({
+      title: "Your cart is EMPTY :(",
+      className: "swal-add"
+    });
+    handlerHome()
+  } else if (data) {
     const newArrayCart = data.filter((prod) => prod.id != id);
     localStorage.setItem("cartArray", JSON.stringify(newArrayCart));
     detailsCart();
