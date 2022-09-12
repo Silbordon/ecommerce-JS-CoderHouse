@@ -1,4 +1,3 @@
-
 [
   {
     "id": 1,
@@ -11,11 +10,128 @@
   },
   {
     "id": 2,
-    "categorie": "woman",
+    "categorie": "man",
     "product": "Shoes",
     "color": "blue",
     "price": 6500,
     "stock": 5,
+    "url": "./img/bg-img/bg-3.jpg"
+  },
+  {
+    "id": 3,
+    "categorie": "accesories",
+    "product": "Purse",
+    "color": "brown",
+    "price": 2500,
+    "stock": 17,
+    "url": "./img/bg-img/bg-4.jpg"
+  },
+  {
+    "id": 4,
+    "categorie": "woman",
+    "product": "Shoes",
+    "color": "yellow",
+    "price": 3400,
+    "stock": 8,
+    "url": "./img/bg-img/blog4.jpg"
+  },
+  {
+    "id": 5,
+    "categorie": "woman",
+    "product": "Accesories",
+    "color": "red",
+    "price": 3500,
+    "stock": 9,
+    "url": "./img/bg-img/blog3.jpg"
+  },
+  {
+    "id": 6,
+    "categorie": "woman",
+    "product": "Dress shorter",
+    "color": "multicolor",
+    "price": 2500,
+    "stock": 4,
+    "url": "./img/bg-img/blog6.jpg"
+  },
+  {
+    "id": 7,
+    "categorie": "woman",
+    "product": "Dress shorter",
+    "color": "multicolor",
+    "price": 2500,
+    "stock": 4,
+    "url": "./img/bg-img/blog6.jpg"
+  },
+  {
+    "id": 8,
+    "categorie": "accesories",
+    "product": "Purse and Mix",
+    "color": "white",
+    "price": 4600,
+    "stock": 1,
+    "url": "./img/bg-img/bg-6.jpg"
+  },
+  {
+    "id": 9,
+    "categorie": "woman",
+    "product": "T-shirt",
+    "color": "red",
+    "price": 1500,
+    "stock": 6,
+    "url": "./img/bg-img/bg-2.jpg"
+  },
+  {
+    "id": 10,
+    "categorie": "children",
+    "product": "T-shirt",
+    "color": "gray",
+    "price": 1000,
+    "stock": 2,
+    "url": "./img/images/cat-3.jpg"
+  },
+  {
+    "id": 11,
+    "categorie": "man",
+    "product": "Shoes",
+    "color": "light brown",
+    "price": 3900,
+    "stock": 4,
+    "url": "./img/images/cat-6.jpg"
+  },
+  {
+    "id": 12,
+    "categorie": "children",
+    "product": "Jacket",
+    "color": "blue",
+    "price": 1900,
+    "stock": 2,
+    "url": "./img/images/cat-6.jpg"
+  },
+  {
+    "id": 13,
+    "categorie": "accesories",
+    "product": "Purse Wolf",
+    "color": "gray",
+    "price": 5100,
+    "stock": 2,
+    "url": "./img/images/cat-5.jpg"
+  },
+  {
+    "id": 15,
+    "categorie": "woman",
+    "product": "T-shirt",
+    "color": "White",
+    "price": 3200,
+    "stock": 6,
+    "url": "./img/images/cat-2.jpg"
+  },
+  {
+    "id": 16,
+    "categorie": "woman",
+    "product": "Shoes",
+    "color": "blue",
+    "price": 6500,
+    "stock": 2,
     "url": "./img/bg-img/bg-3.jpg"
   }
 ]
